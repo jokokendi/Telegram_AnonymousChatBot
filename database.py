@@ -1,4 +1,5 @@
 from datetime import datetime
+from config import MONGO_URL
 import pymongo
 import gridfs
 import pytz
@@ -9,8 +10,7 @@ class DataBase:
         self.dataset, self.storage, self.database = self.connect()
 
     def connect(self):
-        mongod = pymongo.MongoClient(
-            "DataBase URL")
+        mongod = pymongo.MongoClient(MONGO_URL)
 
         database = mongod["TABLE"]
 
