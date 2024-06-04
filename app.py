@@ -354,7 +354,7 @@ class ChatBot:
                 ])
 
                 query.edit_message_text(
-                    text=f"Edit your gender or your partner's gender\nyou: {my_gender}\npartner: {partner_gender}",
+                    text=f"Edit gender Anda atau gender patner Anda\nAnda: {my_gender}\nPatner: {partner_gender}",
                     reply_markup=reply_markup)
 
             elif "SetMine" in query.data:
@@ -367,7 +367,7 @@ class ChatBot:
                     [InlineKeyboardButton(text="👸🏻 Girl", callback_data=f'SetGirl_M')],
                 ])
 
-                query.edit_message_text(text=f"Select your gender\nCurrent: {my_gender}", reply_markup=reply_markup)
+                query.edit_message_text(text=f"Pilih gender Anda\nSaat ini: {my_gender}", reply_markup=reply_markup)
 
             elif "SetPartner" in query.data:
                 data = self.record.search(user_id)
@@ -379,7 +379,7 @@ class ChatBot:
                     [InlineKeyboardButton(text="👸🏻 Girl", callback_data=f'SetGirl_P')],
                 ])
 
-                query.edit_message_text(text=f"Select partner gender\nCurrent: {partner_gender}",
+                query.edit_message_text(text=f"Pilih jenis kelamin patner\nSaat ini: {partner_gender}",
                                         reply_markup=reply_markup)
 
             elif "SetBoy" in query.data:
@@ -402,7 +402,7 @@ class ChatBot:
                 ])
 
                 query.edit_message_text(
-                    text=f"Edit your gender or your partner's gender\nyou: {my_gender}\npartner: {partner_gender}",
+                    text=f"Edit gender Anda atau gender patner Anda\nAnda: {my_gender}\nPatner: {partner_gender}",
                     reply_markup=reply_markup)
 
             elif "SetGirl" in query.data:
@@ -425,7 +425,7 @@ class ChatBot:
                 ])
 
                 query.edit_message_text(
-                    text=f"Edit your gender or your partner's gender\nyou: {my_gender}\npartner: {partner_gender}",
+                    text=f"Edit gender Anda atau gender patner Anda\nAnda: {my_gender}\nPatner: {partner_gender}",
                     reply_markup=reply_markup)
 
     def sharelink(self, update, context):
