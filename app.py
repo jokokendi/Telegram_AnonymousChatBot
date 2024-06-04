@@ -149,22 +149,22 @@ class ChatBot:
                         if partner_gender == "👸🏻 Cewek":
                             if len(self.girls) >= 1:
                                 self.partner_selection(context, gender_list=self.boys, opp_gender_list=self.girls,
-                                                       user_id=user_id, gender1="Girl", gender2="Boy")
+                                                       user_id=user_id, gender1="Cewek", gender2="Cowok")
                             # if NO GIRL is available
                             elif len(self.boys) >= 2:
                                 self.partner_selection(context, gender_list=self.boys, opp_gender_list=self.boys,
-                                                       user_id=user_id, gender1="Boy", gender2="Boy")
+                                                       user_id=user_id, gender1="Cowok", gender2="Cowok")
                             else:
                                 context.bot.send_message(chat_id=user_id, text=partner_not_found())
 
                         elif partner_gender == "🤴🏻 Cowok":
                             if len(self.boys) >= 2:
                                 self.partner_selection(context, gender_list=self.boys, opp_gender_list=self.boys,
-                                                       user_id=user_id, gender1="Boy", gender2="Boy")
+                                                       user_id=user_id, gender1="Cowok", gender2="Cowok")
                             # if NO BOY is available
                             elif len(self.girls) >= 1:
                                 self.partner_selection(context, gender_list=self.boys, opp_gender_list=self.girls,
-                                                       user_id=user_id, gender1="Girl", gender2="Boy")
+                                                       user_id=user_id, gender1="Cewek", gender2="Cowok")
                             else:
                                 context.bot.send_message(chat_id=user_id, text=partner_not_found())
 
@@ -175,22 +175,22 @@ class ChatBot:
                         if partner_gender == "🤴🏻 Cowok":
                             if len(self.boys) >= 1:
                                 self.partner_selection(context, gender_list=self.girls, opp_gender_list=self.boys,
-                                                       user_id=user_id, gender1="Boy", gender2="Girl")
+                                                       user_id=user_id, gender1="Cowok", gender2="Cewek")
                             # if NO BOY is available
                             elif len(self.girls) >= 2:
                                 self.partner_selection(context, gender_list=self.girls, opp_gender_list=self.girls,
-                                                       user_id=user_id, gender1="Girl", gender2="Girl")
+                                                       user_id=user_id, gender1="Cewek", gender2="Cewek")
                             else:
                                 context.bot.send_message(chat_id=user_id, text=partner_not_found())
 
                         elif partner_gender == "👸🏻 Cewek":
                             if len(self.girls) >= 2:
                                 self.partner_selection(context, gender_list=self.girls, opp_gender_list=self.girls,
-                                                       user_id=user_id, gender1="Girl", gender2="Girl")
+                                                       user_id=user_id, gender1="Cewek", gender2="Cewek")
                             # if NO GIRL is available
                             if len(self.boys) >= 1:
                                 self.partner_selection(context, gender_list=self.girls, opp_gender_list=self.boys,
-                                                       user_id=user_id, gender1="Boy", gender2="Girl")
+                                                       user_id=user_id, gender1="Cowok", gender2="Cewek")
                             else:
                                 context.bot.send_message(chat_id=user_id, text=partner_not_found())
 
