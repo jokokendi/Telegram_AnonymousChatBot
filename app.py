@@ -142,11 +142,11 @@ class ChatBot:
                     if user_id in self.chat_pair:
                         self.end_conversation(update, context)
 
-                    if my_gender == "🤴🏻 Boy":
+                    if my_gender == "🤴🏻 Cowok":
                         if user_id not in self.boys:
                             self.boys.append(user_id)
 
-                        if partner_gender == "👸🏻 Girl":
+                        if partner_gender == "👸🏻 Cewek":
                             if len(self.girls) >= 1:
                                 self.partner_selection(context, gender_list=self.boys, opp_gender_list=self.girls,
                                                        user_id=user_id, gender1="Girl", gender2="Boy")
@@ -157,7 +157,7 @@ class ChatBot:
                             else:
                                 context.bot.send_message(chat_id=user_id, text=partner_not_found())
 
-                        elif partner_gender == "🤴🏻 Boy":
+                        elif partner_gender == "🤴🏻 Cowok":
                             if len(self.boys) >= 2:
                                 self.partner_selection(context, gender_list=self.boys, opp_gender_list=self.boys,
                                                        user_id=user_id, gender1="Boy", gender2="Boy")
@@ -168,11 +168,11 @@ class ChatBot:
                             else:
                                 context.bot.send_message(chat_id=user_id, text=partner_not_found())
 
-                    elif my_gender == "👸🏻 Girl":
+                    elif my_gender == "👸🏻 Cewek":
                         if user_id not in self.girls:
                             self.girls.append(user_id)
 
-                        if partner_gender == "🤴🏻 Boy":
+                        if partner_gender == "🤴🏻 Cowok":
                             if len(self.boys) >= 1:
                                 self.partner_selection(context, gender_list=self.girls, opp_gender_list=self.boys,
                                                        user_id=user_id, gender1="Boy", gender2="Girl")
@@ -183,7 +183,7 @@ class ChatBot:
                             else:
                                 context.bot.send_message(chat_id=user_id, text=partner_not_found())
 
-                        elif partner_gender == "👸🏻 Girl":
+                        elif partner_gender == "👸🏻 Cewek":
                             if len(self.girls) >= 2:
                                 self.partner_selection(context, gender_list=self.girls, opp_gender_list=self.girls,
                                                        user_id=user_id, gender1="Girl", gender2="Girl")
@@ -212,9 +212,9 @@ class ChatBot:
 
                 if user_id not in self.chat_pair:
                     # remove instance from list
-                    if my_gender == "🤴🏻 Boy" and user_id in self.boys:
+                    if my_gender == "🤴🏻 Cowok" and user_id in self.boys:
                         self.boys.remove(user_id)
-                    elif my_gender == "👸🏻 Girl" and user_id in self.girls:
+                    elif my_gender == "👸🏻 Cewek" and user_id in self.girls:
                         self.girls.remove(user_id)
 
                     # user reply
@@ -349,8 +349,8 @@ class ChatBot:
                 partner_gender = data.get("partner_gender")
 
                 reply_markup = InlineKeyboardMarkup([
-                    [InlineKeyboardButton(text="👤 Your Gender", callback_data=f'SetMine')],
-                    [InlineKeyboardButton(text="🗣️ Partner's Gender", callback_data=f'SetPartner')],
+                    [InlineKeyboardButton(text="👤 Gender Kamu", callback_data=f'SetMine')],
+                    [InlineKeyboardButton(text="🗣️ Gender Patner", callback_data=f'SetPartner')],
                 ])
 
                 query.edit_message_text(
@@ -363,8 +363,8 @@ class ChatBot:
                 my_gender = data.get("gender")
 
                 reply_markup = InlineKeyboardMarkup([
-                    [InlineKeyboardButton(text="🤴🏻 Boy", callback_data=f'SetBoy_M')],
-                    [InlineKeyboardButton(text="👸🏻 Girl", callback_data=f'SetGirl_M')],
+                    [InlineKeyboardButton(text="🤴🏻 Cowok", callback_data=f'SetBoy_M')],
+                    [InlineKeyboardButton(text="👸🏻 Cewek", callback_data=f'SetGirl_M')],
                 ])
 
                 query.edit_message_text(text=f"Pilih gender Anda\nSaat ini: {my_gender}", reply_markup=reply_markup)
@@ -375,8 +375,8 @@ class ChatBot:
                 partner_gender = data.get("partner_gender")
 
                 reply_markup = InlineKeyboardMarkup([
-                    [InlineKeyboardButton(text="🤴🏻 Boy", callback_data=f'SetBoy_P')],
-                    [InlineKeyboardButton(text="👸🏻 Girl", callback_data=f'SetGirl_P')],
+                    [InlineKeyboardButton(text="🤴🏻 Cowok", callback_data=f'SetBoy_P')],
+                    [InlineKeyboardButton(text="👸🏻 Cewek", callback_data=f'SetGirl_P')],
                 ])
 
                 query.edit_message_text(text=f"Pilih jenis kelamin patner\nSaat ini: {partner_gender}",
@@ -385,9 +385,9 @@ class ChatBot:
             elif "SetBoy" in query.data:
                 # checking request for user or partner
                 if str(query.data).split("_")[1] == "M":
-                    new_data = {"gender": "🤴🏻 Boy"}
+                    new_data = {"gender": "🤴🏻 Cowok"}
                 else:
-                    new_data = {"partner_gender": "🤴🏻 Boy"}
+                    new_data = {"partner_gender": "🤴🏻 Cowok"}
 
                 # update user info
                 self.record.update(user_id, new_data)
@@ -397,8 +397,8 @@ class ChatBot:
                 partner_gender = data.get("partner_gender")
 
                 reply_markup = InlineKeyboardMarkup([
-                    [InlineKeyboardButton(text="👤 Your Gender", callback_data=f'SetMine')],
-                    [InlineKeyboardButton(text="🗣️ Partner's Gender", callback_data=f'SetPartner')],
+                    [InlineKeyboardButton(text="👤 Gender Kamu", callback_data=f'SetMine')],
+                    [InlineKeyboardButton(text="🗣️ Gender Patner", callback_data=f'SetPartner')],
                 ])
 
                 query.edit_message_text(
@@ -408,9 +408,9 @@ class ChatBot:
             elif "SetGirl" in query.data:
                 # checking request for user or partner
                 if str(query.data).split("_")[1] == "M":
-                    new_data = {"gender": "👸🏻 Girl"}
+                    new_data = {"gender": "👸🏻 Cewek"}
                 else:
-                    new_data = {"partner_gender": "👸🏻 Girl"}
+                    new_data = {"partner_gender": "👸🏻 Cewek"}
 
                 # update user info
                 self.record.update(user_id, new_data)
@@ -420,8 +420,8 @@ class ChatBot:
                 partner_gender = data.get("partner_gender")
 
                 reply_markup = InlineKeyboardMarkup([
-                    [InlineKeyboardButton(text="👤 Your Gender", callback_data=f'SetMine')],
-                    [InlineKeyboardButton(text="🗣️ Partner's Gender", callback_data=f'SetPartner')],
+                    [InlineKeyboardButton(text="👤 Gender Kamu", callback_data=f'SetMine')],
+                    [InlineKeyboardButton(text="🗣️ Gender Patner", callback_data=f'SetPartner')],
                 ])
 
                 query.edit_message_text(
@@ -444,10 +444,10 @@ class ChatBot:
                     partner_id = self.chat_pair.get(user_id)
 
                     if username is not None:
-                        context.bot.send_message(chat_id=user_id, text=f"Profile shared")
+                        context.bot.send_message(chat_id=user_id, text=f"Profile Dibagikan")
                         context.bot.send_message(chat_id=partner_id, text=f"@{username}")
                     else:
-                        context.bot.send_message(chat_id=user_id, text=f"Error: Username not found")
+                        context.bot.send_message(chat_id=user_id, text=f"Error: Username tidak di temukan")
 
             # if user stop the bot
             except telegram.error.Unauthorized:
