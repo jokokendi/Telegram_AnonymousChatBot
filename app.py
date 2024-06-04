@@ -472,6 +472,7 @@ class ChatBot:
 
         updater.start_polling()
         updater.idle()
+        print("Starting Anon Bot")
 
 
 if __name__ == '__main__':
@@ -479,4 +480,4 @@ if __name__ == '__main__':
     bot_key = BOT_TOKEN
 
     ChatBot(bot_name, bot_key)
-    print("Starting Anon Bot")
+    
