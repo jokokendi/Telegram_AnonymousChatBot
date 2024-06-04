@@ -277,7 +277,7 @@ class ChatBot:
                     if update.message.text:
                         # text send action
                         context.bot.send_chat_action(chat_id=partner_id, action=ChatAction.TYPING, timeout=1)
-                        context.bot.send_message(chat_id=partner_id, sticker=update.message.text)
+                        context.bot.send_message(chat_id=partner_id, text=update.message.text)
 
                     elif update.message.sticker:
                         # sticker send action
