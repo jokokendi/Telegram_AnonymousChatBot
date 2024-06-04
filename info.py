@@ -1,29 +1,26 @@
 def welcome(name):
-    return f"""Hey {name}🖐\n
-Send me text, links, gifs, stickers, photos, videos or voice messages and I will anonymously forward them to your partner
+    return f"""Hai {name}🖐\n
+ Kirimi saya teks, tautan, gif, stiker, foto, video, atau pesan suara dan saya akan meneruskannya secara anonim ke patner Anda
 
-Commands
-/start - start the bot
-/help - show help guide
-/next — find a new partner
-/stop — stop the dialog
-/settings - settings menu
-/report - Report a message
+ Perintah
+ /start - memulai bot
+ /help - tampilkan panduan bantuan
+ /next — cari pasangan baru
+ /stop — menghentikan dialog
+ /settings - menu pengaturan
 """
 
 
 def user_help():
-    return """With this bot you can chat with Guys and Girls anonymously based on your preferences of age, gender.
-
-Commands
-/start - start the bot
-/next — find a new partner
-/stop — stop this dialog
-/settings - settings menu
-/sharelink - share profile to partner
-/report - Report a message
-/help - show the guide
-
+    return """Dengan bot ini Anda dapat mengobrol dengan Cowok dan Cewek secara anonim berdasarkan jenis kelamin.
+    
+Perintah 
+/start - memulai bot
+/help - tampilkan panduan bantuan
+/next — cari pasangan baru
+/stop — menghentikan dialog
+/sharelink - berbagi profil ke patner
+/settings - menu pengaturan
 """
 
 
@@ -34,25 +31,25 @@ def partner_match(gender):
         partner = "👸🏻 Girl"
 
     return f"""Partner: {partner}
-/next — find a new partner
-/stop — stop this dialog"""
+/next — mencari pasangan baru
+/stop — hentikan obrolan ini"""
 
 
 def partner_not_found():
-    return """🔎 Searching for a partner"""
+    return """🔎 Mencari pasangan"""
 
 
 def destroy(who=None):
     if who == "You":
-        return """You stopped the dialog 🙄
-Type /next to find a new partner
+        return """Anda menghentikan obrolan ini 🙄
+ Ketik /next untuk mencari patner baru
 """
     elif who == "Your":
-        return """Your partner has stopped the dialog 😞
-Type /next to find a new partner
+        return """Lawan Anda menghentikan obrolan ini 🙄
+ Ketik /next untuk mencari patner baru
 """
 
 
 def invalid_destroy():
-    return """You have no partner 🤔
-Type /next to find a new partner"""
+    return """Anda tidak memiliki lawan bicara 🤔
+ Ketik /next untuk mencari patner baru"""
